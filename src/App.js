@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
 import {
+  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-  Link
+  Link,
 } from 'react-router-dom';
 
 export class App extends Component {
   render() {
     return (
+      <Router>
       <div>
         <nav>
-          {/*Aca deben ir los links de navegacion*/}
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/page1">page1</Link>
+        </li>
+        <li>
+          <Link to="/page2">page2</Link>
+        </li>
+
         </nav>
-        {/* Aca tienes que agreager algo para que las rutas funcionen*/}
+        <Switch>
+          <Route path="/page2">
+            <Page2 />
+          </Route>
+          <Route path="/page1">
+            <Page1 />
+          </Route>
+          <Route path="/">
+            <Page1 />
+          </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
       </div>
-    )
+      </Router>
+    );
   }
 }
 
