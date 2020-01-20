@@ -11,34 +11,34 @@ export class App extends Component {
   render() {
     return (
       <Router>
-      <div>
-        <nav>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/page1">page1</Link>
-        </li>
-        <li>
-          <Link to="/page2">page2</Link>
-        </li>
+        <div>
+          <nav>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/page1">page1</Link>
+            </li>
+            <li>
+              <Link to="/page2">page2</Link>
+            </li>
+          </nav>
 
-        </nav>
-        <Switch>
-          <Route path="/page2">
-            <Page2 />
-          </Route>
-          <Route path="/page1">
-            <Page1 />
-          </Route>
-          <Route path="/">
-            <Page1 />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </div>
+          <Switch>
+            <Route exact path="/">
+              <Page1 />
+            </Route>
+            <Route path="/page1">
+              <Page1 />
+            </Route>
+            <Route path="/page2">
+              <Page2 />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     );
   }
