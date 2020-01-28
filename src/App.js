@@ -14,9 +14,6 @@ export class App extends Component {
         <div>
           <nav>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
               <Link to="/page1">page1</Link>
             </li>
             <li>
@@ -25,18 +22,10 @@ export class App extends Component {
           </nav>
 
           <Switch>
-            <Route exact path="/">
-              <Page1 />
-            </Route>
-            <Route path="/page1">
-              <Page1 />
-            </Route>
-            <Route path="/page2">
-              <Page2 />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route exact path="/" component={Page1} />
+            <Route path="/page1" component={Page1} />
+            <Route path="/page2" component={Page2} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </div>
       </Router>
